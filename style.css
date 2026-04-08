@@ -1,0 +1,426 @@
+html {
+   scrollbar-width: none; /*To hide scroll bar */
+}
+
+* {
+  /*** General Settings ***/
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+}
+
+ @font-face { font-family: Genshin; src: url(zh-cn.ttf); } 
+ @font-face { font-family: Genshin; font-weight: bold; src: url(zh-cn.ttf);}
+
+
+body {
+  width: 100%;
+  height: 100vh;
+   min-height: 100vh;
+  background: linear-gradient(0deg, #002A32, #ED254E);
+  background-attachment: fixed;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+
+.flower-decoration {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flower-top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.flower-top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.flower-img {
+  width: 80px;
+  height: auto;
+  opacity: 0.6;
+  animation: flowerFloat 4s ease-in-out infinite;
+}
+
+/* Left flower - faster, no delay */
+.flower-top-left .flower-img {
+  width: 80px;
+  height: auto;
+  opacity: 0.6;
+  animation: flowerFloat 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+/* Right flower - slower, delayed */
+.flower-top-right .flower-img {
+  width: 80px;
+  height: auto;
+  opacity: 0.6;
+  animation: flowerFloat 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Animation for left flower (normal) */
+@keyframes flowerFloatLeft {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* Animation for right flower (flipped) */
+@keyframes flowerFloatRight {
+  0%, 100% {
+    transform: scaleX(-1) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: scaleX(-1) translateY(-10px) rotate(-5deg);
+  }
+}
+
+main {
+  background: transparent;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+@keyframes flowerFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.flower-top-right {
+  top: 20px;
+  right: 20px;
+}
+
+
+
+#header {
+  /*** Header Start ***/
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ED254E;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  padding: 0.6rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100; 
+  
+}
+
+#header-img {
+  width: 5rem;
+  margin-right: 1rem;
+  display: block;
+}
+
+#logo-side {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+  cursor: default;
+  color: rgb(55, 42, 42);
+  font-family: Genshin;
+}
+
+#logo-side h1 {
+  font-family: "Genshin";
+   font-size: 1.5rem;
+   line-height: 1;
+   margin: 0;
+   transform: translateY(1px);
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 2.4rem;
+  margin: 0 2.4rem 0 0;
+}
+
+#nav-bar a {
+  font-family: "Genshin";
+}
+
+ul {
+  list-style: none;
+}
+
+#pages {
+  display: flex;
+  gap: 2.4rem;
+  
+}
+
+#nav-link {
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s ease;
+}
+
+#nav-link:hover {
+  text-decoration: underline;
+  color: #EAEFEF;
+} /*** Header End ***/
+
+#icons {
+  width: 2rem;
+}
+
+#title {
+  text-align: center;
+  font-family: "Genshin";
+  margin: 1rem auto 1rem auto;
+  color: #2a0a12;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+h3#title {
+  color:aliceblue;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#title q {
+  text-align: center;
+  font-family: "Genshin";
+  margin: 1rem auto 1rem auto;
+   display: block; 
+   max-width: 800px;
+   width: 90%; 
+   line-height: 1.6;  
+   font-size: 1rem;
+   font-style: normal;
+}
+
+
+
+/* Divider Section */
+.divider-section {
+  width: 100%;
+  background: linear-gradient(135deg, #2a0a12, #4a1525); /* Different color */
+  margin: 3rem 0 3rem 0;
+  padding: 2rem 0rem;
+  position: relative;
+  z-index: 1;
+}
+
+.divider-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ED254E, #FFB7C5, #ED254E);
+}
+
+.divider-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ED254E, #FFB7C5, #ED254E);
+}
+
+.divider-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  flex-wrap: wrap; /* Makes it responsive */
+}
+
+.divider-text {
+  flex: 1;
+  color: #EAEFEF;
+  font-family: "Genshin", "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.divider-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: "Genshin";
+  color: #FFB7C5;
+}
+
+.divider-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-family: "Genshin";
+}
+
+.main-quote {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-family: "Genshin";
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.quote-icon {
+   width: 100px;  
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.quote-subtitle {
+  font-size: 0.9rem;
+  color: #93032E;
+  margin-bottom: 1rem;
+  font-style: normal;
+}
+
+.divider-image {
+  flex: 1;
+  text-align: center;
+}
+
+#divider-img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px #0000004d;
+  transition: all 0.3s ease;
+}
+
+#divider-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px 15px #93032e99;
+}
+
+.divider-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ED254E, #FFB7C5, #ED254E);
+}
+
+.ghost-left,
+.ghost-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; 
+  pointer-events: none;
+}
+
+.ghost-left {
+  left: 10px;
+}
+
+.ghost-right {
+  right: 10px;
+}
+
+.ghost-decoration {
+  width: 70px;
+  height: auto;
+  opacity: 0.25;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.ghost-left .ghost-decoration {
+  animation: floatLeft 4s ease-in-out infinite;
+  width: 60px;
+  opacity: 0.3;
+}
+
+.ghost-right .ghost-decoration {
+  animation: floatRight 3.5s ease-in-out infinite;
+  width: 80px;
+  opacity: 0.25;
+}
+
+@keyframes floatLeft {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-10deg);
+  }
+}
+
+@keyframes floatRight {
+  0%, 100% {
+    transform: translateY(0) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(10deg);
+  }
+}
+
+
+.divider-content {
+  position: relative;
+  z-index: 2;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12rem;
+  background: #ED254E;
+  padding: 1.5rem 0;
+}
+
+a,
+p {
+  text-decoration: none;
+  color: black; 
+  font-family: "Genshin", "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #FFB7C5; 
+  text-decoration: underline; 
+}
