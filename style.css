@@ -219,9 +219,25 @@ h3#title {
 
 
 /* Divider Section */
+#divider-img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px #0000004d;
+  transition: all 0.3s ease;
+  transition: opacity 0.3s ease-in-out;  /* Add this line */
+}
+
+#divider-img {
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
 .divider-section {
   width: 100%;
-  background: linear-gradient(135deg, #2a0a12, #4a1525); /* Different color */
+  background: linear-gradient(145deg, #2a0a12 0%, #4a1525 40%, #ED254E 100%);
   margin: 3rem 0 3rem 0;
   padding: 2rem 0rem;
   position: relative;
@@ -231,11 +247,13 @@ h3#title {
 .divider-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #ED254E, #FFB7C5, #ED254E);
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(45deg, #ED254E, #FFB7C5, #ED254E);
+  border-radius: 22px;
+  z-index: -1;
 }
 
 .divider-section::after {
@@ -262,7 +280,11 @@ h3#title {
   flex: 1;
   color: #EAEFEF;
   font-family: "Genshin", "Montserrat", sans-serif;
-  text-align: center;
+  text-align: center; 
+   min-height: 400px;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .divider-text h2 {
@@ -286,6 +308,7 @@ h3#title {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  color: white
 }
 
 .quote-icon {
@@ -308,16 +331,26 @@ h3#title {
 .divider-image {
   flex: 1;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider-image {
+  position: relative;
+  display: inline-block;
 }
 
 #divider-img {
-  max-width: 100%;
-  width: 300px;
-  height: auto;
+  width: 310px;
+  height: 500px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 30px #0000004d;
   transition: all 0.3s ease;
+  transition: opacity 0.3s;
 }
+
 
 #divider-img:hover {
   transform: scale(1.05);
